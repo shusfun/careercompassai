@@ -4,8 +4,8 @@ import { AuthIllustration } from "@/components/auth-illustration";
 
 export function AuthLayout({ children, isTyping, showPassword, passwordLength, passwordActive }) {
   return (
-    <div className="grid min-h-screen max-h-screen overflow-hidden lg:grid-cols-2">
-      <div className="relative hidden flex-col justify-between bg-gradient-to-br from-gray-400 via-gray-500 to-gray-600 p-12 text-white dark:flex dark:from-white/90 dark:via-white/80 dark:to-white/70 dark:text-gray-900">
+    <div className="grid min-h-dvh lg:h-dvh lg:grid-cols-2 lg:overflow-hidden">
+      <div className="relative hidden flex-col justify-between bg-gradient-to-br from-gray-400 via-gray-500 to-gray-600 p-12 text-white lg:flex dark:from-white/90 dark:via-white/80 dark:to-white/70 dark:text-gray-900">
         <div className="relative z-20">
           <BrandLink />
         </div>
@@ -24,7 +24,7 @@ export function AuthLayout({ children, isTyping, showPassword, passwordLength, p
         <div className="absolute right-1/4 top-1/4 size-64 rounded-full bg-gray-400/20 blur-3xl dark:bg-gray-300/30" />
         <div className="absolute bottom-1/4 left-1/4 size-96 rounded-full bg-gray-300/20 blur-3xl dark:bg-gray-200/20" />
       </div>
-      <div className="flex items-center justify-center bg-background p-8">
+      <div className="flex min-h-dvh items-center justify-center bg-background px-6 py-8 sm:p-8 lg:min-h-0 lg:overflow-y-auto">
         <div className="w-full max-w-[420px]">
           <div className="mb-12 flex items-center justify-center gap-2 text-lg font-semibold lg:hidden">
             <BrandLink centered />
