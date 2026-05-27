@@ -1,10 +1,21 @@
 import { Link } from "react-router-dom";
+import { Github } from "lucide-react";
 import { BrandLink } from "@/components/brand";
 import { AuthIllustration } from "@/components/auth-illustration";
 
 export function AuthLayout({ children, isTyping, showPassword, passwordLength, passwordActive }) {
   return (
     <div className="grid min-h-dvh lg:h-dvh lg:grid-cols-2 lg:overflow-hidden">
+      <a
+        href="https://github.com/shusfun/careercompassai"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="查看 GitHub 仓库"
+        className="fixed right-4 top-4 z-50 inline-flex h-9 items-center justify-center gap-2 rounded-full border border-white/10 bg-stone-950/45 px-3 text-stone-100 shadow-[0_8px_24px_rgba(0,0,0,.18)] backdrop-blur-md transition-all duration-200 hover:border-white/20 hover:bg-stone-900/70 hover:text-white lg:right-6 lg:top-6 dark:border-white/10"
+      >
+        <Github className="size-4" aria-hidden="true" />
+        <span className="hidden text-xs font-medium leading-none sm:inline">GitHub</span>
+      </a>
       <div className="relative hidden flex-col justify-between bg-gradient-to-br from-gray-400 via-gray-500 to-gray-600 p-12 text-white lg:flex dark:from-white/90 dark:via-white/80 dark:to-white/70 dark:text-gray-900">
         <div className="relative z-20">
           <BrandLink />
