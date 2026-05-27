@@ -1,15 +1,5 @@
 import { Link, Navigate, Route, Routes } from "react-router-dom";
 import { ForgotPasswordPage, LoginPage, SignupPage } from "@/pages/auth-pages";
-import { LumaSpin } from "@/components/luma-spin";
-
-function LoadingPage() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-center gap-6 bg-background text-foreground">
-      <LumaSpin />
-      <p className="text-sm font-medium text-muted-foreground">正在打开 OfferPilot AI...</p>
-    </main>
-  );
-}
 
 function NotFoundPage() {
   return (
@@ -27,7 +17,7 @@ function NotFoundPage() {
 export function App() {
   return (
     <Routes>
-      <Route path="/" element={<LoadingPage />} />
+      <Route path="/" element={<Navigate to="/login" replace />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignupPage />} />
       <Route path="/forgot-password" element={<ForgotPasswordPage />} />
