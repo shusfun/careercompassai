@@ -1,0 +1,37 @@
+import { Link } from "react-router-dom";
+import { BrandLink } from "@/components/brand";
+import { AuthIllustration } from "@/components/auth-illustration";
+
+export function AuthLayout({ children, isTyping, showPassword, passwordLength, passwordActive }) {
+  return (
+    <div className="grid min-h-screen max-h-screen overflow-hidden lg:grid-cols-2">
+      <div className="relative hidden flex-col justify-between bg-gradient-to-br from-gray-400 via-gray-500 to-gray-600 p-12 text-white dark:flex dark:from-white/90 dark:via-white/80 dark:to-white/70 dark:text-gray-900">
+        <div className="relative z-20">
+          <BrandLink />
+        </div>
+        <div className="relative z-20 flex h-[500px] items-end justify-center">
+          <AuthIllustration isTyping={isTyping} showPassword={showPassword} passwordLength={passwordLength} passwordActive={passwordActive} />
+        </div>
+        <div className="relative z-20 flex items-center gap-8 text-sm text-gray-600 dark:text-gray-700">
+          <Link to="/privacy-policy" className="transition-colors hover:text-gray-900 dark:hover:text-black">
+            隐私说明
+          </Link>
+          <Link to="/terms" className="transition-colors hover:text-gray-900 dark:hover:text-black">
+            使用条款
+          </Link>
+        </div>
+        <div className="bg-grid-white/[0.05] absolute inset-0 bg-[size:20px_20px]" />
+        <div className="absolute right-1/4 top-1/4 size-64 rounded-full bg-gray-400/20 blur-3xl dark:bg-gray-300/30" />
+        <div className="absolute bottom-1/4 left-1/4 size-96 rounded-full bg-gray-300/20 blur-3xl dark:bg-gray-200/20" />
+      </div>
+      <div className="flex items-center justify-center bg-background p-8">
+        <div className="w-full max-w-[420px]">
+          <div className="mb-12 flex items-center justify-center gap-2 text-lg font-semibold lg:hidden">
+            <BrandLink centered />
+          </div>
+          <div className="auth-panel-enter">{children}</div>
+        </div>
+      </div>
+    </div>
+  );
+}
